@@ -1,0 +1,17 @@
+@import "components/button";
+@import "components/banner";
+
+.cocktails-container {
+  border: red solid 1px;
+  width: 80%;
+  margin: 40px auto;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  margin: 16px auto;
+}
