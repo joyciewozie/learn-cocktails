@@ -14,7 +14,7 @@ class CocktailsController < ApplicationController
   def create
     @cocktail = Cocktail.new(cocktail_params)
     if @cocktail.save
-      redirect_to cocktail_path(@cocktail.id)
+      redirect_to cocktails_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,6 +33,6 @@ class CocktailsController < ApplicationController
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :status, :method, :base, :ingredients, :how_to_make)
+    params.require(:cocktail).permit(:name, :status, :method, :base, :ingredients, :how_to_make, :photo)
   end
 end

@@ -1,5 +1,6 @@
 class Cocktail < ApplicationRecord
   has_many :attempts, dependent: :destroy
+  has_one_attached :photo
   STATUSES = ["Not Tried", "Tried & Liked", "Tried & It's Okay", "Tried & Didn't Like"]
   METHODS = ['Shake', 'Stir']
   validates :name, presence: true

@@ -1,5 +1,6 @@
 class Attempt < ApplicationRecord
   belongs_to :cocktail
+  has_one_attached :photo
 
   validates :title, presence: true
   validates :comment, presence: true

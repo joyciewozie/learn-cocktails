@@ -40,6 +40,6 @@ class AttemptsController < ApplicationController
   end
 
   def attempt_params
-    params.require(:attempt).permit(:title, :comment, :date_of_attempt)
+    params.require(:attempt).permit(:title, :comment, :date_of_attempt, :photo)
   end
 end
