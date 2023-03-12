@@ -1,0 +1,20 @@
+<h1><%= @cocktail.name %></h1>
+<p><%= @cocktail.status %></p>
+<p><%= @cocktail.method %></p>
+<p><%= @cocktail.base %></p>
+<p><%= @cocktail.ingredients %></p>
+<p><%= @cocktail.how_to_make %></p>
+<%= link_to "See all cocktails", root_path %>
+<%= link_to "Edit cocktail",  edit_cocktail_path %>
+<%= link_to "Add an attempt", new_cocktail_attempt_path(@cocktail.id)  %>
+<p><strong>Attempts</strong></p>
+<ul class="list-group">
+  <% @cocktail.attempts.each do |attempt| %>
+    <li class="list-group-item">
+    <%= attempt.title %>
+    <%= attempt.comment %>
+    <%= attempt.date_of_attempt %>
+    <%= link_to "Edit attempt", edit_attempt_path(attempt.id) %>
+    </li>
+  <% end %>
+</ul>

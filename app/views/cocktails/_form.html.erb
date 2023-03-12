@@ -1,0 +1,9 @@
+<%= simple_form_for cocktail do |f| %>
+  <%= f.input :name %>
+  <%= f.input :status, collection: Cocktail::STATUSES %>
+  <%= f.input :method, collection: Cocktail::METHODS %>
+  <%= f.input :base %>
+  <%= f.input :ingredients %>
+  <%= f.input :how_to_make %>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
