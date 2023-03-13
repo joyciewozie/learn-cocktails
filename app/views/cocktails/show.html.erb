@@ -14,6 +14,11 @@
     <%= attempt.title %>
     <%= attempt.comment %>
     <%= attempt.date_of_attempt %>
+    <% if attempt.photo.attached?%>
+        <%= cl_image_tag attempt.photo.key, class: "img-fluid" %>
+    <% else %>
+        This attempt has no photo
+     <% end %>
     <%= link_to "Edit attempt", edit_attempt_path(attempt.id) %>
     </li>
   <% end %>
