@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :cocktails, except: :index do
     resources :attempts, only: [:new, :create]
   end
-  resources :attempts, only: [:edit, :update]
+  resources :attempts, only: [:show, :edit, :update, :destroy]
 end

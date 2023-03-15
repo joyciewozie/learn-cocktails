@@ -1,4 +1,5 @@
 <div class="form">
+  <p><%= link_to "Back", cocktail_path(@cocktail.id) %></p>
+  <h5 style="text-align: center">Edit cocktail</h5>
   <%= render "form", cocktail: @cocktail %>
-  <%= link_to "See all cocktails", root_path %>
 </div>

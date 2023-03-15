@@ -1,3 +1,11 @@
 <div class="form">
-  <%= render "form", cocktail: @cocktail, attempt: @attempt %>
+  <%= link_to "Back", cocktail_path(@cocktail.id) %>
+  <h5 style="text-align: center">Add attempt for <%= @cocktail.name %></h5>
+  <%= simple_form_for [@cocktail, @attempt] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :comment %>
+  <%= f.input :date_of_attempt, error: "Date is invalid" %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit class: 'btn btn-primary'%>
+<% end %>
 </div>

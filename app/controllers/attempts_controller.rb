@@ -5,6 +5,10 @@ class AttemptsController < ApplicationController
     @attempt = Attempt.new
   end
 
+  def show
+    @attempt = Attempt.find(params[:id])
+  end
+
   def create
     # create instance of Attempt
     @attempt = Attempt.new(attempt_params)
@@ -31,6 +35,12 @@ class AttemptsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @attempt = Attempt.find(params[:id])
+    @attempt.destroy!
+    redirect_to cocktail_path(@attempt.cocktail), status: :see_other
   end
 
   private

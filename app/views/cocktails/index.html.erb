@@ -1,19 +1,17 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1567850174684-a9e79e49ee50?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80);">
-  <div class="container">
-    <h1>Drinks at Joyce's <strong></h1>
-    <p>Follow Joyce's attempts at homemade cocktails</p>
-    <a class="btn btn-flat" href="<%= new_cocktail_path%>">New cocktail</a>
+<div class="details-container">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1508253730651-e5ace80a7025?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);">
+    <div class="container">
+      <h1>Drinks at Joyce's <strong></h1>
+      <p>Log of my journey to becoming a home bartender</p>
+    </div>
   </div>
-</div>
-<div class="cocktails-container">
+
+  <div class="cards">
   <% @cocktails.each do |cocktail| %>
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://images.unsplash.com/photo-1567850174684-a9e79e49ee50?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title"><%= cocktail.name %></h5>
-            <p class="card-text">cocktail.status</p>
-            <a class="btn btn-flat" href="<%= cocktail_path(cocktail.id)%>">View more</a>
-          </div>
-      </div>
-    <% end %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path cocktail.photo.key %>)">
+    <%= link_to cocktail.name, cocktail_path(cocktail.id), class: "link" %>
+  </div>
+<%end%>
+</div>
+
 </div>

@@ -8,4 +8,6 @@ class Cocktail < ApplicationRecord
   validates :method, inclusion: { in: METHODS }, presence: true
   validates :ingredients, presence: true
   validates :how_to_make, presence: true
+  validates :photo, presence: true
+  validates :notes, presence: true, length: { maximum: 100 }
 end

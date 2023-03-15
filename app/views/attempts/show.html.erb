@@ -1,0 +1,6 @@
+<div class="form">
+  <%= render "form", cocktail: @cocktail, attempt: @attempt %>
+  <%= link_to "Delete",
+      attempt_path(@attempt.id),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+</div>

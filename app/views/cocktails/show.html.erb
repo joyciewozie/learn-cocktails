@@ -1,25 +1,41 @@
-<h1><%= @cocktail.name %></h1>
-<p><%= @cocktail.status %></p>
-<p><%= @cocktail.method %></p>
-<p><%= @cocktail.base %></p>
-<p><%= @cocktail.ingredients %></p>
-<p><%= @cocktail.how_to_make %></p>
-<%= link_to "See all cocktails", root_path %>
-<%= link_to "Edit cocktail",  edit_cocktail_path %>
-<%= link_to "Add an attempt", new_cocktail_attempt_path(@cocktail.id)  %>
-<p><strong>Attempts</strong></p>
-<ul class="list-group">
-  <% @cocktail.attempts.each do |attempt| %>
-    <li class="list-group-item">
-    <%= attempt.title %>
-    <%= attempt.comment %>
-    <%= attempt.date_of_attempt %>
-    <% if attempt.photo.attached?%>
-        <%= cl_image_tag attempt.photo.key, class: "img-fluid" %>
-    <% else %>
-        This attempt has no photo
-     <% end %>
-    <%= link_to "Edit attempt", edit_attempt_path(attempt.id) %>
-    </li>
-  <% end %>
-</ul>
+<div class="page-container">
+  <div class="card mb-3">
+      <img id="cocktail-image" src="<%= cl_image_path @cocktail.photo.key %>" class="card-img-top img-fluid" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"><%= @cocktail.name %></h5>
+      <p class="card-text"><small class="text-muted"><%= link_to "Edit", edit_cocktail_path(@cocktail.id) %>
+          <%= link_to "Delete",
+          cocktail_path(@cocktail),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+          %></p>
+      <p class="card-text"><strong>Notes: </strong><%= @cocktail.status %> | <strong>Method: </strong><%= @cocktail.method %> | <strong>Base: </strong><%= @cocktail.base %></p>
+      <p class="card-text"><strong>About: </strong><%= @cocktail.notes %></p>
+      <p class="card-text"><strong>Ingredients: </strong><%= @cocktail.ingredients %></p>
+      <p class="card-text"><strong>How to make: </strong><%= @cocktail.how_to_make %></p>
+    </div>
+  </div>
+  <hr style="text-align:left;margin-left:0">
+  <p><strong>Attempts</strong><p>
+  <div class="attempts-container">
+    <% @cocktail.attempts.each do |attempt| %>
+      <div class="card-product">
+        <% if attempt.photo.attached?%>
+          <%= cl_image_tag attempt.photo.key, class: "card-product-infos" %>
+          <% else %>
+          <%= image_tag "https://t3.ftcdn.net/jpg/04/62/93/66/360_F_462936689_BpEEcxfgMuYPfTaIAOC1tCDurmsno7Sp.jpg" %>
+          <% end %>
+        <div class="card-product-infos">
+          <h2><%= attempt.title %></h2>
+            <p><%= attempt.comment %></p>
+            <p><%= attempt.date_of_attempt %></p>
+            <p><%= link_to "Edit", edit_attempt_path(attempt.id) %>
+            <%= link_to "Delete",
+                  attempt_path(attempt.id),
+                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+            %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <p><%= link_to "Add", new_cocktail_attempt_path(@cocktail.id)  %></p>
+  </div>

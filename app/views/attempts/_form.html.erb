@@ -1,8 +1,7 @@
 <%= simple_form_for [cocktail, attempt] do |f| %>
   <%= f.input :title %>
   <%= f.input :comment %>
-  <%= f.input :date_of_attempt %>
+  <%= f.input :date_of_attempt, error: "Date is invalid" %>
   <%= f.input :photo, as: :file %>
-  <%= f.submit class: 'btn-flat'%>
-  <%= f.submit 'Back', class: 'btn btn-ghost'%>
+  <%= f.submit class: 'btn btn-primary'%>
 <% end %>

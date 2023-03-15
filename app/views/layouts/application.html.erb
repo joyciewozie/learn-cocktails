@@ -7,10 +7,15 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
   <body>
-    <%= yield %>
+      <%= render "shared/navbar" %>
+      <div class="details-container">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

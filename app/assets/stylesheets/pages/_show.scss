@@ -1,3 +1,26 @@
-p {
-  color: blue
+@import "components/navbar.scss";
+@import "components/cardproduct.scss";
+@import "components/card.scss";
+
+
+.page-container {
+  width: 54%;
+  margin: 40px auto;
+}
+
+
+.card-product {
+  margin: 8px auto;
+}
+
+#cocktail-image {
+  height: 32rem !important;
+}
+
+.card {
+  border: none;
+}
+
+.card-body {
+  padding-left: 0;
 }

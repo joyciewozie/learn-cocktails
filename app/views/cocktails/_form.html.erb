@@ -1,10 +1,12 @@
 <%= simple_form_for cocktail do |f| %>
   <%= f.input :name %>
-  <%= f.input :status, collection: Cocktail::STATUSES %>
-  <%= f.input :method, collection: Cocktail::METHODS %>
-  <%= f.input :base %>
+  <%= f.input :base, label: 'Base Liquor:' %>
+  <%= f.input :notes, label: 'Notes' %>
   <%= f.input :ingredients %>
   <%= f.input :how_to_make %>
-  <%= f.submit class: 'btn btn-primary' %>
-  <%= f.submit 'Back', class: 'btn btn-ghost'%>
+  <%= f.input :status, collection: Cocktail::STATUSES, label: 'Notes' %>
+  <%= f.input :method, collection: Cocktail::METHODS %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit class: 'btn btn-primary', label: 'Add' %>
+
 <% end %>
