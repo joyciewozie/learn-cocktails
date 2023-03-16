@@ -6,18 +6,13 @@
     </div>
   </div>
 
-
+<div class="cards-container">
 <div class="cards">
   <% @cocktails.each do |cocktail| %>
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-  url(
-    <% if cocktail.photo.attached? %>
-        <%= cl_image_path cocktail.photo.key %>
-        <%else%>
-        No photo
-      <% end %>
-  )">
+  url(<%= cl_image_path cocktail.photo.key %>)">
     <%= link_to cocktail.name, cocktail_path(cocktail.id), class:"link" %>
   </div>
   <% end %>
+</div>
 </div>
