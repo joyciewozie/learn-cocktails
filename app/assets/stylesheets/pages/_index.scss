@@ -1,46 +1,10 @@
 @import "components/navbar";
 @import "components/banner";
 @import "components/button";
-@import "components/card_category";
+
 
 
 .link {
-  text-decoration: none;
-}
-
-.link:hover {
-  text-decoration:underline;
-}
-
-body {
-  background-color:#ffffff;
-}
-
-.cocktails-cards-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.card-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 8px;
-  flex-grow: 1;
-  padding: 8px;
-}
-
-.card {
-  margin: 8px;
-  width: 100px;
-  border: red solid 1px;
-}
-
-.card-body {
-  padding-left: 0;
-}
-
-.card-img-top {
-  width: 25%;
+  text-decoration: none !important;
+  color: white !important;
 }
