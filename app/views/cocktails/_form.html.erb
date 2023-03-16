@@ -1,7 +1,7 @@
 <%= simple_form_for cocktail do |f| %>
-  <%= f.input :name, label: 'About' %>
+  <%= f.input :name, label: 'Name' %>
   <%= f.input :base, label: 'Base Liquor:' %>
-  <%= f.input :notes, label: 'Notes' %>
+  <%= f.input :notes, label: 'About' %>
   <%= f.input :ingredients %>
   <%= f.input :how_to_make %>
   <%= f.input :status, collection: Cocktail::STATUSES, label: 'Notes' %>
