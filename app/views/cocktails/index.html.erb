@@ -6,13 +6,13 @@
     </div>
   </div>
 
-<div class="alert alert-secondary" role="alert">
-  Welcome!
-</div>
 
 <div class="cards-container">
+<div class="alert alert-secondary" id="text" role="alert">
+  Welcome! I am currently working on a user authentication feature. If you add a new cocktail or attempt, please kindly delete it before leaving. Thank you ☺️
+</div>
 <div class="cards">
-  <% @cocktails.each do |cocktail| %>
+  <% @cocktails.order("name").each do |cocktail| %>
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
   url(<%= cl_image_path cocktail.photo.key %>)">
     <%= link_to cocktail.name, cocktail_path(cocktail.id), class:"link" %>
