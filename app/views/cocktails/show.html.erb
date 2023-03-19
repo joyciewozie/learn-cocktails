@@ -17,7 +17,7 @@
   <hr style="text-align:left;margin-left:0">
   <p><strong>Attempts</strong><p>
   <div class="attempts-container">
-    <% @cocktail.attempts.each do |attempt| %>
+    <% @cocktail.attempts.order("date_of_attempt").each do |attempt| %>
       <div class="card-product">
         <% if attempt.photo.attached?%>
           <%= cl_image_tag attempt.photo.key, class: "card-product-infos" %>
